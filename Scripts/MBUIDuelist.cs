@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class UIDuelist : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
+public class MBUIDuelist : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
     private Vector2 offset;
     private bool isDragging;
@@ -56,7 +56,7 @@ public class UIDuelist : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
             pictureToShow.color = new Color(1f, 1f, 1f, 1f);
 
             offset = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-             
+
             if (offset.y > -3f)
             {
                 var newWidgetGameObject = Instantiate(widgetGameObject, offset, transform.rotation);
@@ -67,7 +67,7 @@ public class UIDuelist : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
             textNumber.text = "สฃำเ: " + widgetNumber.ToString();
         }
 
-        if(widgetNumber == 0)
+        if (widgetNumber == 0)
         {
             pictureToShow.color = new Color(.7f, .7f, .7f, .7f);
         }

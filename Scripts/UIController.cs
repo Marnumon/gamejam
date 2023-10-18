@@ -12,7 +12,7 @@ public class UIController : MonoBehaviour
     public float fadeSpeed;
     private bool shouldFadeToBlack, shouldFadeFromBlack;
 
-    public GameObject levelCompleteText, frogToDrag;
+    public GameObject levelCompleteUI, quitGameUI, levelFailUI;
 
     private void Awake()
     {
@@ -60,18 +60,47 @@ public class UIController : MonoBehaviour
         shouldFadeToBlack = false;
     }
 
-    public void StartGameInLevel()
+    //以下为按钮交互
+    public void StartGame()
     {
         Time.timeScale = 1f;
     }
 
-    public void ResetGameInLevel()
+    public void ResetGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
-    public void QuitGameInLevel()
+    //退出
+    public void QuitGameUI()
+    {
+        quitGameUI.SetActive(true);
+    }
+
+    public void QuitGameYes()
     {
         SceneManager.LoadScene("Main_Menu");
+    }
+
+    public void QuitGameNo()
+    {
+        quitGameUI.SetActive(false);
+    }
+
+    //胜利
+    public void LevelCompleteUI()
+    {
+        levelCompleteUI.SetActive(true);
+    }
+
+    public void StayGame()
+    {
+        levelCompleteUI.SetActive(false);
+    }
+
+    //失败
+    public void LevelFailUI()
+    {
+        levelFailUI.SetActive(true);
     }
 }
