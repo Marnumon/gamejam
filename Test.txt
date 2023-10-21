@@ -1,5 +1,0 @@
-test
-这是测试上传到GitHub的文本
-
-这是在GitHub上完成的修改
-尝试将GitHub上的文件加载到本地仓库
